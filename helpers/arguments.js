@@ -2,7 +2,7 @@ const getArguments = (args) => {
     const res = {}
     const [executer, file,  ...rest] = (args)
     rest.forEach((value, index, array) => {
-        if(value.charAt(0) == '-'){
+        if(value.charAt(0) == '-'){   // charAt bu berilgan indexni tekshiradi
             if(index == array.length - 1) {
                 res[value.substring(1)] = true
             } else if(array[index + 1].charAt(0) != '-'){
@@ -15,4 +15,4 @@ const getArguments = (args) => {
     return res
 }
 
-module.exports = getArguments;
+export default getArguments; //bu export ES usulda. bu zamonaviy usul. module.exprots esa CommonJS da ishlaydi. eski usul
